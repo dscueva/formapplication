@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Virtual Environment
+venv/
+*.env
+.env
+
+# macOS
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Others
+*.sqlite3

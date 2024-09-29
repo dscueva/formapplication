@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package formprocessor;
+
+service FormProcessor {
+    rpc ProcessForm (FormData) returns (FormResponse);
+}
+
+message FormData {
+    string name = 1;
+    string email = 2;
+    string message = 3;
+}
+
+message FormResponse {
+    bool success = 1;
+    string message = 2;
+}
