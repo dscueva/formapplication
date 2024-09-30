@@ -9,8 +9,31 @@ interface FormData {
 const SubmitForm: React.FC = () => {
   const { register, handleSubmit, formState: { errors } } = useForm<FormData>();
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);  // You can handle the form submission logic here
+  // Function to handle form submission
+  const onSubmit = async (data: FormData) => {
+    try {
+      // Send POST request to your FastAPI backend
+      const response = await fetch('http://localhost:8000/submit-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),  // Send the form data as JSON
+      });
+
+      // Handle the response
+      if (response.ok) {
+        const result = await response.json();
+        console.log('Form successfully submitted:', result);
+        alert('Form submitted successfully!');
+      } else {
+        console.error('Error submitting form');
+        alert('Failed to submit form');
+      }
+    } catch (error) {
+      console.error('Error occurred:', error);
+      alert('An error occurred during form submission');
+    }
   };
 
   return (
