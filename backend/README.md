@@ -1,6 +1,6 @@
-# Form Backend
+# Form Application
 
-**Form Backend** is a demo project to process forms. It leverages **FastAPI** for handling HTTP requests and **gRPC** for efficient inter-service communication. This project is set up using a virtual environment to ensure dependency isolation and ease of development.
+**Form Application** is a demo project to process forms. It leverages **FastAPI** for handling HTTP requests and **gRPC** for efficient inter-service communication. This project is set up using a virtual environment to ensure dependency isolation and ease of development.
 
 ## Table of Contents
 
