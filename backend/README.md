@@ -293,7 +293,7 @@ UserWarning: Protobuf gencode version 5.27.2 is older than the runtime version 5
 ## Future Enhancements
 
 - **Frontend Development:**
-  - Expand the frontend to include a user interface for form submissions using frameworks like React, Vue.js, or Angular.
+  - Expand the frontend to include a user interface for form submissions using framework NextJS.
 
 - **Database Integration:**
   - Integrate a database (e.g., PostgreSQL, SQLite) to store form submissions persistently.
@@ -306,9 +306,6 @@ UserWarning: Protobuf gencode version 5.27.2 is older than the runtime version 5
 
 - **Testing:**
   - Develop unit and integration tests to ensure application reliability and stability.
-
-- **Deployment:**
-  - Prepare the application for deployment using platforms like Heroku, AWS, or Docker for production environments.
 
 ---
 
@@ -331,12 +328,11 @@ UserWarning: Protobuf gencode version 5.27.2 is older than the runtime version 5
 
 ## Contact
 
-For any questions or support, please contact [your.email@example.com](mailto:your.email@example.com).
+For any questions or support, please contact [dscueva@gmail.com](mailto:dscueva@gmail.com).
 
 ---
 
-**Happy Coding!** 🚀
+🚀
 
 ---
 
-**Note:** Replace placeholders like repository URLs, contact information, and any specific project details with actual information relevant to your project.
