@@ -1,40 +1,128 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Form Submission Frontend
+
+This project is a simple Next.js frontend for submitting a form to a FastAPI backend. The form captures a user's name, email, and message, then sends the data to the backend for processing using gRPC.
+
+## Table of Contents
+
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Technologies Used](#technologies-used)
+- [Project Structure](#project-structure)
+- [Features](#features)
+- [Running the Frontend](#running-the-frontend)
+- [Submitting the Form](#submitting-the-form)
+- [Screenshots](#screenshots)
+- [Example Usage](#example-usage)
+- [License](#license)
 
 ## Getting Started
 
-First, run the development server:
+To get the frontend up and running locally, follow these steps:
+
+### Prerequisites
+
+- Node.js (v18 or higher)
+- npm (which comes with Node.js)
+
+If you don't have Node.js installed, you can install it via Homebrew:
+
+```bash
+brew install node@18
+```
+
+### Installation
+
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/yourusername/formapplication-frontend.git
+cd formapplication/frontend
+```
+
+Install the project dependencies:
+
+```bash
+npm install
+```
+
+Create a `.env.local` file in the root directory and add the following environment variable for your backend URL:
+
+```bash
+NEXT_PUBLIC_BACKEND_URL=http://localhost:8000
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The application will be running at [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Technologies Used
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Next.js**: React framework for server-rendered applications
+- **React Hook Form**: For form handling and validation
+- **TypeScript**: For type-safe code
+- **TailwindCSS**: For styling the frontend
+- **Zod**: For schema validation
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+frontend
+├── components
+│   └── SubmitForm.tsx     # The form component for submitting data
+├── pages
+│   └── index.tsx          # The main entry point for the app
+├── public                 # Static assets
+├── styles                 # Global CSS files
+├── package.json           # Project dependencies and scripts
+└── next.config.js         # Next.js configuration
+```
 
-## Learn More
+## Features
 
-To learn more about Next.js, take a look at the following resources:
+- A simple form to collect the user's name, email, and message.
+- The form is validated using React Hook Form and Zod.
+- TailwindCSS is used for easy, responsive styling.
+- The form submits data to a FastAPI backend that processes the form data using gRPC.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running the Frontend
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Once you have the project dependencies installed, you can start the development server using the following command:
 
-## Deploy on Vercel
+```bash
+npm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This will start the application on [http://localhost:3000](http://localhost:3000).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Submitting the Form
+
+The form consists of three fields:
+
+- **Name**: Required.
+- **Email**: Required, validated against an email pattern.
+- **Message**: Required.
+
+Upon form submission:
+
+- The form data is sent as a POST request to the FastAPI backend running on `http://localhost:8000/submit-form`.
+- The backend processes the form data using gRPC.
+- If the form is successfully processed, you will see a success message.
+
+## Screenshots
+
+Here's a sample screenshot of the form:
+
+![Form Screenshot](./public/form-screenshot.png)
+
+## Example Usage
+
+Once the form is submitted, the data will be processed by the backend, and the frontend will display a success or failure message depending on the result.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
