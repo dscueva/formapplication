@@ -1,10 +1,8 @@
-# .github/workflows/ci.yml
-
 name: CI Pipeline
 
 on:
   push:
-    branches: [ master ]   # Ensure this matches your default branch
+    branches: [ master ]
   pull_request:
     branches: [ master ]
 
@@ -15,11 +13,15 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.10, 3.11, 3.12]  # Corrected Python versions
+        python-version: [3.10, 3.11, 3.12]  # Only valid Python versions
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+
+    # Remove old Python version caches to prevent issues
+    - name: Remove Python Caches
+      run: sudo rm -rf /opt/hostedtoolcache/Python/3.1*
 
     - name: Set Up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v4
