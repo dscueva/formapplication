@@ -9,11 +9,12 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+
 
     strategy:
       matrix:
-        python-version: [3.10, 3.11, 3.12]  # Only valid Python versions
+        python-version: [3.12]  # Only valid Python versions
 
     steps:
     - name: Checkout Repository
