@@ -1,13 +1,24 @@
+# backend/app/grpc_server.py
+
 import grpc
 from concurrent import futures
 import time
-
+import re
 from . import form_processor_pb2
 from . import form_processor_pb2_grpc
 
+def is_valid_email(email: str) -> bool:
+    # Simple regex for email validation
+    regex = r'^\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+    return re.match(regex, email) is not None
+
 class FormProcessorServicer(form_processor_pb2_grpc.FormProcessorServicer):
     def ProcessForm(self, request, context):
-        # we can modify this to store somewhere
+        # Validate email
+        if not is_valid_email(request.email):
+            return form_processor_pb2.FormResponse(success=False, message="Invalid email address.")
+        
+        # Process the form
         print(f"Received form data: Name={request.name}, Email={request.email}, Message={request.message}")
         return form_processor_pb2.FormResponse(success=True, message="Form processed successfully.")
 
