@@ -35,10 +35,11 @@ jobs:
       - name: Generate gRPC Python Files
         run: |
           python -m grpc_tools.protoc \
-          -I./backend/proto \
+          -I./proto \
           --python_out=./backend \
           --grpc_python_out=./backend \
-          ./backend/proto/form_processor.proto
+          ./proto/form_processor.proto
+
 
 
       - name: Run Tests with Coverage
