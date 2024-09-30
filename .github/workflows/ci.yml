@@ -36,12 +36,10 @@ jobs:
         run: |
           python -m grpc_tools.protoc \
           -I./backend/proto \
-          --python_out=./backend/app \
-          --grpc_python_out=./backend/app \
-          --proto_path=./backend/proto \
-          --descriptor_set_out=backend/app/form_processor.descriptor \
-          -Mform_processor.proto=app.form_processor_pb2 \
+          --python_out=./backend \
+          --grpc_python_out=./backend \
           ./backend/proto/form_processor.proto
+
 
       - name: Run Tests with Coverage
         run: |
