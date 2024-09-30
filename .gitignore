@@ -27,5 +27,5 @@ logs/
 *.sublime-project
 *.sublime-workspace
 
-# Other
+# Others
 *.sqlite3
