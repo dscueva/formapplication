@@ -4,8 +4,8 @@ import grpc
 from concurrent import futures
 import time
 import re
-from . import form_processor_pb2
-from . import form_processor_pb2_grpc
+import form_processor_pb2
+import form_processor_pb2_grpc
 
 def is_valid_email(email: str) -> bool:
     # Simple regex for email validation

@@ -1,8 +1,8 @@
 # backend/app/grpc_client.py
 
 import grpc
-from . import form_processor_pb2
-from . import form_processor_pb2_grpc
+import form_processor_pb2
+import form_processor_pb2_grpc
 
 def send_form_data(form):
     with grpc.insecure_channel('localhost:50051') as channel:
